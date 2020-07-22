@@ -145,4 +145,14 @@ allElement(locator: string) {
     return elementObj;
 }
 
+
+ //Filter the element
+ async selectDropdownbyNum(locator: string, optionNum: number) {
+    if (optionNum) {
+        var options = await this.allElement(locator)
+            .then(function (options) {
+                options[optionNum].click();
+            });
+    }
+};
 }
